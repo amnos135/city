@@ -24,7 +24,7 @@
 	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script><!-- 프린트 -->
 
 
- 
+
 
 	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script> <!-- 팝업 자동차용 -->
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
@@ -35,11 +35,11 @@
  팸리리사이트랑 팝업자동차랑 충돌중...패밀리사이트 없애니까 팝업이 잘돌아감 -->
 	<script src="./js/focusIn2.js"></script><!-- 팸리리사이트 -->
 
- 
+
 	<script src="./js/script.js"></script>
- 
-	 
- 
+
+
+
 
 
 
@@ -99,10 +99,11 @@
 
 	<div id="wrap">
 		<!-- 헤더 끝 -->
- 
-		<header role="header" data-include="../include/header/index.html"></header><!--헤더 인클루드-->
 
-		 
+		<div role="header" data-include="../include/header/header.html"></div>
+		<!--헤더 인클루드-->
+
+
 		<!-- 헤더 끝 -->
 
 
@@ -768,23 +769,23 @@
 
 
 	<script src="http://code.jquery.com/jquery.min.js"></script>
-<script>
-	$(function(){
-		includeLayout();
-	});
-
-	function includeLayout(){
-		var includeArea = $('[data-include]');
-		var self, url;
-		$.each(includeArea, function() {
-			self = $(this);
-			url = self.data("include");
-			self.load(url, function() {
-				self.removeAttr("data-include");
-			});
+	<script>
+		$(function () {
+			includeLayout();
 		});
-	}
-</script>
+
+		function includeLayout() {
+			var includeArea = $('[data-include]');
+			var self, url;
+			$.each(includeArea, function () {
+				self = $(this);
+				url = self.data("include");
+				self.load(url, function () {
+					self.removeAttr("data-include");
+				});
+			});
+		}
+	</script>
 
 </body>
 
