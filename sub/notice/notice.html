@@ -522,69 +522,33 @@
 
 
 									<div class="bod_page">
-										<a href="#" onclick="goPage(1); return false;" class="btn_frist">처음 페이지</a><a
-											href="#" onclick="goPage(1); return false;" class="btn_10prev"
+										<a href="#"  class="btn_frist">처음 페이지</a><a
+											href="#"   class="btn_10prev"
 											title="이전 10페이지">이전
-											10페이지</a><span>1</span><a href="#" onclick="goPage(2); return false;"
-											title="2페이지로 이동">2</a><a href="#" onclick="goPage(3); return false;"
-											title="3페이지로 이동">3</a><a href="#" onclick="goPage(4); return false;"
-											title="4페이지로 이동">4</a><a href="#" onclick="goPage(5); return false;"
-											title="5페이지로 이동">5</a><a href="#" onclick="goPage(6); return false;"
-											title="6페이지로 이동">6</a><a href="#" onclick="goPage(7); return false;"
-											title="7페이지로 이동">7</a><a href="#" onclick="goPage(8); return false;"
-											title="8페이지로 이동">8</a><a href="#" onclick="goPage(9); return false;"
-											title="9페이지로 이동">9</a><a href="#" onclick="goPage(10); return false;"
-											title="10페이지로 이동">10</a><a href="#" onclick="goPage(11); return false; "
+											10페이지</a><span>1</span><a href="#"  
+											title="2페이지로 이동">2</a><a href="#" 
+											title="3페이지로 이동">3</a><a href="#" 
+											title="4페이지로 이동">4</a><a href="#" 
+											title="5페이지로 이동">5</a><a href="#" 
+											title="6페이지로 이동">6</a><a href="#" 
+											title="7페이지로 이동">7</a><a href="#" 
+											title="8페이지로 이동">8</a><a href="#" 
+											title="9페이지로 이동">9</a><a href="#" 
+											title="10페이지로 이동">10</a><a href="#" 
 											class="btn_10next" title="다음 10페이지">다음 10페이지</a><a href="#"
-											onclick="goPage(1032); return false; " class="btn_end" title="끝 페이지">끝
+											onclick="" class="btn_end" title="끝 페이지">끝
 											페이지</a>&nbsp;
 
 									</div>
 
 								</form>
-
-								<script type="text/javascript">
-									yh.siteCodeFull = "portal";
-									yh.ptIdx = "100";
-									yh.bIdx = "";
-									yh.isNew = eval("true");
-									yh.formId = "list";
-									yh.formName = "litForm";
-								</script>
-								<script type="text/javascript" src="/common/js/commonProcess.js"></script>
-								<script type="text/javascript" src="/common/js/bbs/pageMove.js"></script>
+ 
 
 							</div>
 
 
 
-							<script type="text/javascript">
-								//<![CDATA[
-
-								$(document).ready(function () {
-									$("#regBtn").click(function () {
-										if ($("[name=researchPoint]:checked").length == 0) {
-											alert("평가 점수를 선택해주세요.");
-											$("#researchPoint5").focus();
-											return false;
-										}
-
-										$.ajax({
-											type: "post",
-											dataType: "json",
-											url: document.researchForm.action,
-											data: $("#researchForm").serialize(),
-											success: function (result) {
-												alert(result.message);
-											}
-										}).fail(function () {
-											alert("서버와 통신 중 오류가 발생했습니다.");
-										});
-									});
-								});
-
-								//]]>
-							</script>
+							 
 
 
 
