@@ -571,7 +571,7 @@ cursor: pointer;
 #mayor>#mayor_top>.img {
     width: inherit;
     height: 100%;
-    background: url(../images/mayor.PNG) no-repeat;
+    background: url(../images/mayor.png) no-repeat;
     background-size: contain;
     margin-top: -36px;
 
