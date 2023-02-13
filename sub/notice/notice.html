@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type='text/css' href="./css/common.css">
 	<link rel="stylesheet" type='text/css' href="./css/index.css">
 	<link rel="stylesheet" type='text/css' href="./css/gaesipan.css">
+ 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
@@ -16,7 +17,7 @@
 	<link rel="stylesheet" type='text/css' href="./css/weather-icons.min.css">
 	<link rel="stylesheet" type='text/css'
 		href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
- 
+
 
 
 
@@ -46,46 +47,72 @@
 
 </head>
 
-	
+
 <script>
-	$(function(){
-	
-		
+	$(function () {
+
+
 		/* zoom 버튼 */
 		var base = 100;
 		var mybody = $('body');
-		$('#zoom a').on('click',function(){
+		$('#zoom a').on('click', function () {
 			var zNum = $('#zoom a').index(this);
-			if(zNum==0){//확대(+)
-				base+=10;
-			}else if(zNum==1){// 100%(100)
-				base=100;
-			}else{// 축소(-)
-				base-=10;
+			if (zNum == 0) { //확대(+)
+				base += 10;
+			} else if (zNum == 1) { // 100%(100)
+				base = 100;
+			} else { // 축소(-)
+				base -= 10;
 			}
-			mybody.css('overflow-x','auto')
-				.css('transform-origin','50% 0')
-				.css('transform','scale('+base/100+')')
-				.css('zoom',base+'%'); //낮은 브라우저 때문에
+			mybody.css('overflow-x', 'auto')
+				.css('transform-origin', '50% 0')
+				.css('transform', 'scale(' + base / 100 + ')')
+				.css('zoom', base + '%'); //낮은 브라우저 때문에
 			return false;
 		});
-		
+
 		/* 인쇄버튼 */
-		$('.print_btn').on('click',function(){
+		$('.print_btn').on('click', function () {
 			window.print();
 			return false;
 		});
-		
-	
+
+
 	});
-	</script>	
-
-
-
-
-
-
-
+</script>
+<script>
+	function includeHTML() {
+		var z, i, elmnt, file, xhttp;
+		/*loop through a collection of all HTML elements:*/
+		z = document.getElementsByTagName("*");
+		for (i = 0; i < z.length; i++) {
+			elmnt = z[i];
+			/*search for elements with a certain atrribute:*/
+			file = elmnt.getAttribute("w3-include-html");
+			if (file) {
+				/*make an HTTP request using the attribute value as the file name:*/
+				xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function () {
+					if (this.readyState == 4) {
+						if (this.status == 200) {
+							elmnt.innerHTML = this.responseText;
+						}
+						if (this.status == 404) {
+							elmnt.innerHTML = "Page not found.";
+						}
+						/*remove the attribute, and call this function once more:*/
+						elmnt.removeAttribute("w3-include-html");
+						includeHTML();
+					}
+				}
+				xhttp.open("GET", file, true);
+				xhttp.send();
+				/*exit the function:*/
+				return;
+			}
+		}
+	};
+</script>
 
 
 <body>
@@ -101,104 +128,12 @@
 	</div>
 
 	<div id="wrap">
-		<header id="header">
-			<div id="wrap_wrap" class="blue">
-				<div id="gnb_top">
-					<div id="gnb_top_menu">
-						<ul>
-							<li class="button glow_button"><a href="#">문화관광</a></li>
-							<li class="button glow_button"> <a href="#">열린시장실</a></li>
-							<li class="button glow_button"> <a href="#">보건소</a></li>
-							<li class="button glow_button"> <a href="#">영주시의회</a></li>
-							<li class="button glow_button"> <a href="#">사이버시민</a></li>
-							<li class="button glow_button"> <a href="#">인삼엑스포</a></li>
-							<li class="button glow_button"> <a href="#">실내수영장</a></li>
-						</ul>
-					</div>
-
-					<div id="gnb_option">
-						<div><a href="#">로그인</a></div>
-						<div><a href="#">사이트 바로가기</a></div>
-						<div>
-							<form id="orderForm" style="color: black;">
-
-								<select id="familysite1" style="width: 100px;">
-									<option value="Family site">한국어</option>
-									<option value="Family site">ENGLISH</option>
-									<option value="Family site">中文</option>
-									<option value="Family site">日本語</option>
-								</select>
-
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="wrap_wrap" class="white">
-				<div id="gnb_menu">
-					<div id="h_logo"> </div>
-					<div id="gnb_nav ">
-						<ul class="navmm-links">
-							<label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-							<li>
-								<a href="#" class="desktop-item">전자민원</a>
-							</li>
-							<li>
-								<a href="#" class="desktop-item">영주소개</a>
-							</li>
-							<li>
-								<a href="#" class="desktop-item">소통참여</a>
-							</li>
-							<li>
-								<a href="#" class="desktop-item">산업경제</a>
-							</li>
-							<li>
-								<a href="#" class="desktop-item">정보공개</a>
-							</li>
-							<li>
-								<a href="#" class="desktop-item">분야별정보</a>
-							</li>
-							<li>
-								<a href="#" class="desktop-item">인구정책</a>
-							</li>
-						</ul>
-
-					</div>
-				</div>
-				<div id="nav  ">
-					<div id="subshadow_box">
-						<div class="nav_back">
-
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-			<div id="wrap_wrap" class="white">
-				<div id="header_search">
-					<div id="h_search">
-						<form id="search_orderForm">
-							<span class="cellStyle">
-								<select id="familysite1"
-									style="width:140px;height:40px; background-color: white; position: relative; left: 30px; border: none; color: black;">
-									<option value="Family site">통합검색</option>
-									<option value="Family site">담당업무</option>
-									<option value="Family site">직원검색</option>
-
-								</select>
-							</span>
-							<div class="container-1">
-								<div class="icon"></div>
-								<input type="text" id="search" autocomplete="off" placeholder="Search..." />
-							</div>
-						</form>
-
-					</div>
-
-				</div>
-			</div>
-		</header><!-- 헤더 끝 -->
+		<!-- 헤더 끝 -->
+		<div w3-include-html="../include/header/index.html"></div> 
+		
+		<script>
+		includeHTML();
+		</script>
 		<!-- 헤더 끝 -->
 
 
@@ -345,7 +280,7 @@
 
 									<div class="bod_head">
 										<p class="page_num">
-											현재 페이지  <span style="color: blue;">1</span> / 전체 페이지 1032
+											현재 페이지 <span style="color: blue;">1</span> / 전체 페이지 1032
 										</p>
 										<fieldset class="bod_search">
 											<legend class="hidden">게시판 검색</legend>
